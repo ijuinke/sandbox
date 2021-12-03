@@ -1,0 +1,23 @@
+name: Deployment
+
+on:
+  schedule:
+    # 毎日 22:01 に実行
+    - cron: 1 22 * * *
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: deploymenet
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: develop
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "16"
