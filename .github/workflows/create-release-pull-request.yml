@@ -20,6 +20,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Create pull request
-        run: gh pr create --base main --head develop --title Release
+        run: gh pr create --base main --head develop --title "Release" --body "body"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
