@@ -33,6 +33,6 @@ jobs:
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
 
       - name: Create pull request
-        run: gh pr create --base main --head develop --title "Staging リリース - ${{ steps.date.outputs.date }}" --body "Staging にリリースします。" --label "release"
+        run: gh pr create --base main --head develop --title "Staging リリース - ${{ steps.date.outputs.date }}" --body "Staging にリリースします。" --label "release" --reviewer 'ijuinke'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
