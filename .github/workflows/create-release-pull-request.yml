@@ -22,6 +22,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: develop
+          
+      - name: Create release branch
+        run: |
+          git checkout -b release-branch
+          git push origin release-branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get current date
         env: 
@@ -33,6 +40,6 @@ jobs:
         run: echo ${{ steps.date.outputs.date }} # 2022-01-03 10:42
 
       - name: Create pull request
-        run: gh pr create --base main --head develop --title "Staging リリース - ${{ steps.date.outputs.date }}" --body "Staging にリリースします。" --label "release" --reviewer 'ijuinke'
+        run: gh pr create --base main --head release-branch --title "Staging リリース - ${{ steps.date.outputs.date }}" --body "Staging にリリースします。" --label "release" --reviewer 'ijuinke'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
