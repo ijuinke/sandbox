@@ -1,0 +1,6 @@
+Staging リリース - <%= Time.now.strftime("%F") %>
+Staging にリリースします。
+
+<% pull_requests.each do |pr| -%>
+- #<%=  pr.number %> <%= pr.mention %>
+<% end -%>
