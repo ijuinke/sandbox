@@ -15,6 +15,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TZ: "Asia/Tokyo"
         run: |
-          echo "current_date=`date +'%Y-%m-%dT%H-%M-%S'`" >> "$GITHUB_ENV"
+          echo "current_date=`date +'%Y-%m-%dT%H:%M:%S'`" >> "$GITHUB_ENV"
           gh release create ${{ env.current_date }} --generate-notes --target main
       
