@@ -15,5 +15,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TZ: "Asia/Tokyo"
         run: |
-          gh release create ${{ github.ref_name }}`date +'%Y-%m-%dT%H-%M-%S'` --generate-notes --target ${{ github.ref_name }}
+          last_tag=`git describe --tags --match="*-${{ github.ref_name }}" HEAD 2>/dev/null || true`
+          new_tag=`date +'%Y-%m-%dT%H-%M-%S'`-${{ github.ref_name }}
+          gh release create ${new_tag} --generate-notes --target ${{ github.ref_name }} --notes-start-tag "${last_tag}"
       
