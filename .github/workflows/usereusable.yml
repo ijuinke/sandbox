@@ -1,0 +1,10 @@
+name: User resuable workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/reusable.yml
+    with:
+      greeting: hello, world!
