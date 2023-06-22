@@ -1,5 +1,5 @@
-Staging リリース - <%= Time.now.strftime("%F") %>
-Staging にリリースします。
+<%= ENV["DEPLOY_TARGET"] %> リリース - <%= Time.now.strftime("%F") %>
+<%= ENV["DEPLOY_TARGET"] %> にリリースします。
 
 <% pull_requests.each do |pr| -%>
 - #<%=  pr.number %> <%= pr.mention %>
