@@ -2,4 +2,4 @@
 
 GitHub Actions のテスト
 
-v5
+サンドボックス。
