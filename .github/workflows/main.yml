@@ -28,6 +28,7 @@ jobs:
       - name: Setup Zig
         run: |
           sudo apt update
+          sudo apt search zig
           sudo apt install zig
           zig --version
 
