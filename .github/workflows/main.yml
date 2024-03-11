@@ -15,8 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: rustup show active-toolchain
-
-      - name: Installed rust target
-        run: |
-          rustc --version --verbose
+      - run: pipenv --version
