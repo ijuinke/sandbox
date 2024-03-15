@@ -13,4 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo hoge
+      - run: |
+          echo hoge \
+            piyo
