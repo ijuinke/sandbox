@@ -1,18 +1,15 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - run: |
-          echo hoge `
-            piyo
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run:
+          pnpm --version
