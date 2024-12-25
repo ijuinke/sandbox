@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - run:
-          pnpm --version
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+    
