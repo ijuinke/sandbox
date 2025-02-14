@@ -7,5 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+    steps:      
+      - uses: actions/checkout@v4
       - run: bash ./run.sh
